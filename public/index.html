@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaJet | Premium Multi-Downloader</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="https://files.catbox.moe/w6po3q.mp4" type="video/mp4">
+    </video>
+
+    <div class="glass-card">
+        <h1>MediaJet</h1>
+        <p class="subtitle">High-Speed Media Extraction · Secure Backend</p>
+
+        <div class="platform-grid">
+            <button class="platform-btn tiktok" onclick="setPlatform('TikTok', this)">TikTok</button>
+            <button class="platform-btn youtube" onclick="setPlatform('YouTube', this)">YouTube</button>
+            <button class="platform-btn facebook" onclick="setPlatform('Facebook', this)">Facebook</button>
+            <button class="platform-btn instagram" onclick="setPlatform('Instagram', this)">Instagram</button>
+            <button class="platform-btn pinterest" onclick="setPlatform('Pinterest', this)">Pinterest</button>
+        </div>
+
+        <div class="format-section">
+            <span class="format-label">Select Format</span>
+            <div class="format-grid">
+                <button class="format-btn active" id="mp4-btn" onclick="setFormat('mp4')">MP4 (Video)</button>
+                <button class="format-btn" id="mp3-btn" onclick="setFormat('mp3')">MP3 (Audio)</button>
+            </div>
+        </div>
+
+        <input type="text" id="videoUrl" placeholder="Paste link here..." autocomplete="off" spellcheck="false">
+        <button class="extract-btn" onclick="triggerDownload()">DOWNLOAD</button>
+
+        <div id="result-display"></div>
+    </div>
+
+    <div class="audio-player-wrapper">
+        <span class="bgm-label">BGM</span>
+        <audio id="bgm" controls loop>
+            <source src="https://files.catbox.moe/g4leko.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

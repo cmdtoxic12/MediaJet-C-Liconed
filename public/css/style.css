@@ -1,0 +1,269 @@
+/* MediaJet – Premium Multi-Downloader */
+
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 50%;
+    z-index: -100;
+    object-fit: cover;
+    filter: brightness(0.4) saturate(1.2);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: #000;
+    overflow-x: hidden;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(25px) saturate(200%);
+    -webkit-backdrop-filter: blur(25px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 35px;
+    padding: 40px;
+    width: 90%;
+    max-width: 480px;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin: 0;
+    background: linear-gradient(to bottom, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}
+
+.subtitle {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+.platform-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.platform-btn {
+    padding: 12px 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.platform-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.platform-btn.active.tiktok {
+    background: #ff0050;
+    border-color: #00f2ea;
+    box-shadow: 0 0 15px #ff0050;
+}
+
+.platform-btn.active.youtube {
+    background: #ff0000;
+    border-color: #ff0000;
+    box-shadow: 0 0 15px #ff0000;
+}
+
+.platform-btn.active.facebook {
+    background: #1877f2;
+    border-color: #1877f2;
+    box-shadow: 0 0 15px #1877f2;
+}
+
+.platform-btn.active.instagram {
+    background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+    border-color: #fff;
+    box-shadow: 0 0 15px #dc2743;
+}
+
+.platform-btn.active.pinterest {
+    background: #bd081c;
+    border-color: #bd081c;
+    box-shadow: 0 0 15px #bd081c;
+}
+
+.format-section {
+    margin-bottom: 20px;
+}
+
+.format-label {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+}
+
+.format-grid {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.format-btn {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.format-btn.active {
+    background: white;
+    color: black;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+input {
+    width: 100%;
+    padding: 18px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 1rem;
+}
+
+input::placeholder {
+    color: #64748b;
+}
+
+.extract-btn {
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border-radius: 15px;
+    background: #fff;
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.extract-btn:hover:not(:disabled) {
+    background: #818cf8;
+    color: #fff;
+    box-shadow: 0 0 30px rgba(129, 140, 248, 0.6);
+}
+
+.extract-btn:disabled {
+    opacity: 0.5;
+    cursor: wait;
+}
+
+.audio-player-wrapper {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 8px 20px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.bgm-label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #818cf8;
+}
+
+audio {
+    height: 30px;
+    filter: invert(100%) opacity(0.5);
+}
+
+#result-display {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(74, 222, 128, 0.15);
+    border: 1px solid #4ade80;
+    border-radius: 15px;
+    display: none;
+    text-align: left;
+}
+
+#result-display .result-title {
+    margin: 0 0 8px 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    word-break: break-word;
+}
+
+#result-display .result-meta {
+    margin: 0 0 12px 0;
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+#result-display .thumb {
+    width: 100%;
+    max-height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+#result-display a.manual-dl {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #4ade80;
+    color: black;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+#result-display a.manual-dl:hover {
+    background: #22c55e;
+    transform: translateY(-1px);
+}
+
+.error-box {
+    background: rgba(239, 68, 68, 0.15) !important;
+    border-color: #ef4444 !important;
+}
+
+@media (max-width: 480px) {
+    .glass-card {
+        padding: 28px 20px;
+        border-radius: 24px;
+    }
+    h1 { font-size: 2.2rem; }
+    .platform-grid { grid-template-columns: repeat(2, 1fr); }
+}

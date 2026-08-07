@@ -1,0 +1,13 @@
+{
+  "name": "mediajet",
+  "version": "2.0.0",
+  "description": "MediaJet – Premium Multi-Downloader with secure zero-dependency backend",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "private": true
+}
